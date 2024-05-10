@@ -12,7 +12,7 @@ class BinarySearchTree {
         this.root = null
     }
 
-    sortedArrayToBST(arr, start, end) {
+    sortedArrayToBST(arr, start=0, end=arr.length-1) {
               
         if( start > end ) {
             return null;
@@ -39,6 +39,11 @@ class BinarySearchTree {
         } else {
             return false
         }
+    }
+
+    reBalance(root){
+        let tempArr = this.inOrder();
+        return this.root = this.sortedArrayToBST(tempArr)
     }
 
     isEmpty() {
