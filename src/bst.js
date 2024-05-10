@@ -28,6 +28,19 @@ class BinarySearchTree {
         return newNode
     }
 
+    isBalanced(){
+        let tempArr = this.inOrder()
+        let mid = parseInt((0 + tempArr.length-1) / 2)
+        let currentRoot = this.root.value;
+        console.log(currentRoot)
+
+        if(currentRoot === tempArr[mid]){
+            return true
+        } else {
+            return false
+        }
+    }
+
     isEmpty() {
         return this.root === null
     }
@@ -75,11 +88,9 @@ class BinarySearchTree {
     preOrder(root = this.root, arr = []){
         if(root) {
             arr.push(root.value)
-            // console.log(root.value)
             this.preOrder( root.left, arr)
             this.preOrder( root.right, arr)
         }
-        // console.log(arr)
         return arr
     }
 
