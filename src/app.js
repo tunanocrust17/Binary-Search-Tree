@@ -23,3 +23,15 @@ console.log(bst.levelOrder())
 
 bst.delete(10)
 console.log(bst.levelOrder())
+console.log(bst)
+
+
+let arr = [1,2,3,4,5,6,7,8,9,10]
+let arrLength = arr.length;
+const newBST = new BinarySearchTree();
+newBST.sortedArrayToBST(arr, 0, arrLength -1)
+// console.log(newBST.sortedArrayToBST(arr, 0, arrLength-1))
+console.log(newBST.preOrder())
+newBST.insert(22)
+newBST.insert(15)
+console.log(newBST.inOrder())

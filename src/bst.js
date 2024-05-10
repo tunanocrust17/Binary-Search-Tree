@@ -12,6 +12,22 @@ class BinarySearchTree {
         this.root = null
     }
 
+    sortedArrayToBST(arr, start, end) {
+              
+        if( start > end ) {
+            return null;
+        }
+
+        var mid = parseInt((start + end) / 2);
+        const newNode = new Node(arr[mid])
+        if(this.isEmpty()){
+            this.root = newNode
+        }
+        newNode.left = this.sortedArrayToBST(arr, start, mid - 1)
+        newNode.right = this.sortedArrayToBST(arr, mid + 1 , end)
+        return newNode
+    }
+
     isEmpty() {
         return this.root === null
     }
